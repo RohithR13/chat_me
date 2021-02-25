@@ -1,0 +1,25 @@
+<% @page_title = "Edit Account" %>
+<div class="ui form">
+  <h1>Update</h1>
+  <%= form_for(@user,html:{class:"ui form",role: "form"}, url: signup_path ,method: :patch ) do |f| %>
+    <p> Username:</br> <%= f.text_field :username, autocomplete: "username"%> </p>
+    
+    <p> New Password:</br> <%= f.password_field :password%></p>
+    <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
+    <%= f.submit :Update %>
+
+    
+  <% end %>
+  <br>
+  <p>
+  <%= link_to 'Destroy Account',[:user] , method: :delete, data:{ confirm:'Are you sure want to delete account?'}%>
+  </p>
+  <% if @user.errors.any? %>
+    <ul class="Signup_Errors">
+    <% for message_error in @user.errors.full_messages %>
+      <li>* <%= message_error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  
+</div>
