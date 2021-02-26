@@ -32,6 +32,7 @@ gem 'hirb'
 gem 'pry'
 gem 'trestle'
 gem 'trestle-auth'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
